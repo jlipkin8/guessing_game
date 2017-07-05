@@ -3,6 +3,9 @@
 import random
 
 name = raw_input("Hey! What's your name? ")
-number = raw_input(("%s, I'm thinking of a number between 1 and 100.\nTry to guess my number.\nYour guess? ")%(name))
-random_number = random.randint(1,100)
-print random_number
+print "%s, I'm thinking of a number between 1 and 100.\nTry to guess my number." % (name)
+
+random_number = random.randint(1, 100)
+
+while True:
+    number_guess = int(raw_input("Your guess? "))
