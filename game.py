@@ -17,5 +17,6 @@ while True:
         else:
             print "Your guess is too high, try again."
     else:
+        count += 1
         print "Congrats! You guessed correctly, after %d guesses." % (count)
         break
