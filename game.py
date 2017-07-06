@@ -9,23 +9,21 @@ random_number = random.randint(1, 100)
 count = 0
 
 while True:
-    try:    
+    count += 1
+
+    try:
         number_guess = int(raw_input("Your guess? "))
-        if number_guess != random_number:
-            count += 1
-            if number_guess < random_number:
-                if number_guess < 0:
-                    print "That is not a valid number. Please guess between 1 and 100."
-                else:
-                    print "Your guess is too low, try again."
-            else:
-                if number_guess > 100:
-                    print "That is not a valid number. Please guess between 1 and 100."
-                else:
-                    print "Your guess is too high, try again."
-        else:
-            count += 1
-            print "Congrats! You guessed correctly, after %d guesses." % (count)
-            break
+
     except ValueError:
         print "Please enter a valid interger."
+        continue
+
+    if number_guess < 0 or number_guess > 100:
+        print "That is not a valid number. Please guess between 1 and 100."
+    elif number_guess < random_number:
+        print "Your guess is too low, try again."
+    elif number_guess > random_number:
+        print "Your guess is too high, try again."
+    else:
+        print "Congrats! You guessed correctly, after %d guesses." % (count)
+        break
