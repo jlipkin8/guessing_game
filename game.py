@@ -3,9 +3,10 @@
 import random
 
 def play_game(): 
-    start_range = int(user_input("Add a start range: "))
-    end_range = int(user_input("Pick an end range: "))
+    start_range = int(raw_input("Add a start range: "))
+    end_range = int(raw_input("Pick an end range: "))
     random_number = random.randint(start_range, end_range)
+    print "random_number: ", random_number
     count = 0
     print "I'm thinking of a number between {} and {}.\nTry to guess my number.".format(start_range, end_range) 
 
