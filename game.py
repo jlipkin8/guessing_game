@@ -2,12 +2,10 @@
 
 import random
 
-name = raw_input("Hey! What's your name? ")
-print "%s, I'm thinking of a number between 1 and 100.\nTry to guess my number." % (name)
-
 def play_game(): 
     random_number = random.randint(1, 100)
     count = 0
+    print "I'm thinking of a number between 1 and 100.\nTry to guess my number." 
 
     while True:
         count += 1
@@ -28,3 +26,15 @@ def play_game():
         else:
             print "Congrats! You guessed correctly, after %d guesses." % (count)
             break
+
+
+name = raw_input("Hey! What's your name? ")
+print "Hello {}, Want to play a guessing game? ".format(name)
+user_input = raw_input("Enter Y for yes or N for no: ")
+
+while user_input != "N": 
+    play_game()
+    print "Do you want to play another game?"
+    user_input = raw_input("Enter Y for yes or N for no: ")
+
+print "GOODBYE FOR NOw"
