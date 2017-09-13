@@ -8,8 +8,13 @@ def play_game():
     print "I'm thinking of a number between 1 and 100.\nTry to guess my number." 
 
     while True:
+        MAX_GUESS = 5
         count += 1
 
+        if count >= 5: 
+            print "Too many guess. This game will end."
+            break
+            
         try:
             number_guess = int(raw_input("Your guess? "))
 
