@@ -3,9 +3,11 @@
 import random
 
 def play_game(): 
-    random_number = random.randint(1, 100)
+    start_range = int(user_input("Add a start range: "))
+    end_range = int(user_input("Pick an end range: "))
+    random_number = random.randint(start_range, end_range)
     count = 0
-    print "I'm thinking of a number between 1 and 100.\nTry to guess my number." 
+    print "I'm thinking of a number between {} and {}.\nTry to guess my number.".format(start_range, end_range) 
 
     while True:
         MAX_GUESS = 5
@@ -14,7 +16,7 @@ def play_game():
         if count >= 5: 
             print "Too many guess. This game will end."
             break
-            
+
         try:
             number_guess = int(raw_input("Your guess? "))
 
@@ -22,7 +24,7 @@ def play_game():
             print "Please enter a valid interger."
             continue
 
-        if number_guess < 0 or number_guess > 100:
+        if number_guess < start_range or number_guess > end_range:
             print "That is not a valid number. Please guess between 1 and 100."
         elif number_guess < random_number:
             print "Your guess is too low, try again."
